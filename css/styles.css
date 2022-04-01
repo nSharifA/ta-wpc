@@ -1,0 +1,207 @@
+/* Remove padding and margin */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+:root {
+    --clr-text: rgb(50, 50, 50);
+    --clr-primary: rgb(197, 101, 32);
+    --clr-accent: rgb(142, 31, 31);
+    --clr-menu-bg: rgb(69, 69, 69);
+
+    --ff-title: Verdana, 'Segoe UI';
+    --ff-serif: "Crimson Text", serif;
+
+    --font-size: 16px;
+    --font-size-xs: 0.6rem;
+    --font-size-s: 0.8rem;
+    --font-size-m: 1.2rem;
+    --font-size-l: 1.5rem;
+    --font-size-xl: 2.5rem;
+    --font-size-xxl: 3.5rem;
+
+    --nav-bar-height: 2.5rem;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+}
+
+html {
+    box-sizing: border-box;
+    /* font-family: var(--ff-serif); */
+    color: var(--clr-text);
+    font-size: var(--font-size);
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--ff-title);
+    color: var(--clr-primary);
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: var(--font-size-xxl);
+}
+
+h2 {
+    font-size: var(--font-size-xl);
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: var(--font-size-l);
+    margin-bottom: 1rem;
+}
+
+h4, p, dl {
+    font-size: var(--font-size-m);
+}
+
+dd {
+    margin-bottom: 0.8rem;
+    margin-top: 0.35rem;
+}
+
+dt {
+    font-weight: 600;
+}
+
+/* Navigation bar */
+
+body > header {
+    background-color: var(--clr-menu-bg);
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    margin-top: 10px;
+    box-shadow: 0px 4px 2px var(--clr-menu-bg);
+
+}
+
+body > header:before {
+    top: -10px;
+}
+
+body > main:before {
+    top: -10px;
+}
+
+body > header::before,
+body > main::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    height: 11px;
+    width: 100%;
+    background-color: var(--clr-menu-bg);
+    z-index: 1;
+}
+
+main {
+    position: relative;
+    margin-top: 10px;
+}
+
+nav ul {
+    height: var(--nav-bar-height);
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav a {
+    display: inline-block;
+    color: var(--clr-primary);
+    text-decoration: none;
+}
+
+nav a:hover,
+nav a:focus {
+    color: var(--clr-accent);
+    text-decoration: underline;
+}
+
+/* main page */
+
+#main-page {
+    background-color: rgb(188, 188, 188);
+    height: calc(100vh - var(--nav-bar-height));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../images/main-page-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-blend-mode: multiply;
+    box-shadow: 0px 0px 8px var(--clr-primary);
+}
+
+#main-page>h1 {
+    color: var(--clr-primary);
+    padding-left: 1rem;
+    position: relative;
+    bottom: calc(var(--nav-bar-height) / 2);
+    filter: drop-shadow(1px 1px 1px rgb(37, 37, 37));
+}
+
+main {
+    background-color: rgb(245, 245, 245);
+}
+
+main > section:not(:last-of-type) {
+    margin-bottom: 7.5rem;
+}
+
+section,
+dl {
+    padding: 1rem;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.about__me,
+.about__us,
+.references__slider,
+dl {
+    border: 1px solid var(--clr-primary);
+    border-radius: 0.25rem;
+    overflow: hidden;
+    box-shadow: 0px 0px 8px var(--clr-primary);
+}
+
+:is(.about__me, .about__us) > p {
+    padding: 1ch;
+}
+
+.contact {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    background-color: var(--clr-primary);
+    padding: 2rem;
+}
+
+#social-media {
+    background-color: inherit;
+}
