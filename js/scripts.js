@@ -10,8 +10,8 @@ const navItems = {};
 // intersection observer setup
 const observerOptions = {
     root: null,
-    rootMargin: '15%',
-    threshold: 0.7,
+    rootMargin: '0px',
+    threshold: 0.5,
   };
   
   function observerCallback(entries, observer) {
@@ -22,6 +22,7 @@ const observerOptions = {
         const navItem = navItems[entry.target.id];
         // add 'active' class on the navItem
         navItem.classList.add('active');
+        entry.target.classList.add('show');
         // remove 'active' class from any navItem that is not
         // same as 'navItem' defined above
         Object.values(navItems).forEach((item) => {
@@ -36,4 +37,3 @@ const observerOptions = {
   const observer = new IntersectionObserver(observerCallback, observerOptions);
   
   sections.forEach((sec) => observer.observe(sec));
-  
