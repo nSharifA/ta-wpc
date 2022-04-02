@@ -68,20 +68,6 @@ html {
     font-size: var(--font-size);
 }
 
-html {
-    overflow: hidden;
-    height: 100vh;
-}
-body {
-    height: 100%;
-}
-
-main {
-    height: 100%;
-    overflow-y: scroll;
-    -webkit-overflow-scrolling:touch;
-}
-
 h1,
 h2,
 h3 {
@@ -140,15 +126,15 @@ nav:before {
 
 body>header {
     background-color: var(--clr-menu-bg);
-    position: fixed;
+    position: sticky;
     top: 0;
     z-index: 2;
+    position: fixed;
     width: 100%;
-    padding: 0.8rem;
 }
 
 #header-logo {
-    margin: 0rem;
+    margin: 0.8rem;
     text-align: center;
 }
 
@@ -284,6 +270,7 @@ nav a:focus {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-blend-mode: multiply;
+    background-size: auto 100vh;
     /* box-shadow: 0px 0px 8px var(--clr-primary); */
 }
 
