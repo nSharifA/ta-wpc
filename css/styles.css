@@ -43,7 +43,7 @@
 ::-webkit-scrollbar-thumb {
     background-color: var(--clr-primary);
     background-image: -webkit-linear-gradient(135deg,
-    var(--clr-menu-bg) 25%,
+            var(--clr-menu-bg) 25%,
             transparent 25%,
             transparent 50%,
             var(--clr-menu-bg) 50%,
@@ -301,6 +301,15 @@ section {
     gap: 1rem;
 }
 
+section:not(#home, #contact) {
+    opacity: 0;
+    transition: opacity 500ms ease;
+}
+
+section:not(#home, #contact).show {
+    opacity: 1;
+}
+
 #about {
     display: flex;
     flex-direction: column;
@@ -362,16 +371,6 @@ dl {
         margin-bottom: 0;
     }
 
-    nav ul {
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: center;
-    }
-
-    nav a {
-        opacity: 1;
-    }
-
     section:not(#home, #contact) {
         max-width: 900px;
         margin-left: auto;
@@ -380,7 +379,13 @@ dl {
         transition: opacity 500ms ease;
     }
 
-    section:not(#home, #contact).show {
+    nav ul {
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    nav a {
         opacity: 1;
     }
 
