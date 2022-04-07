@@ -21,7 +21,8 @@
   <link rel="icon" src="favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/swiffy-slider.css">
 
 </head>
 
@@ -67,10 +68,10 @@
           quidem eligendi corporis ipsam voluptate praesentium nesciunt ab, et error natus, quia tempore hic
           voluptatum.
         </p>
-        <img src="images/owner.jpg" alt="Kivitelező arckép">
+        <img loading="lazy" src="images/owner.jpg" alt="Kivitelező arckép">
       </div>
       <div class="about__us">
-        <img src="images/team.jpg" alt="csapatkép">
+        <img loading="lazy" src="images/team.jpg" alt="csapatkép">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, nam recusandae facere dicta numquam et
           tempora odit debitis vitae provident laborum, nulla, ipsam eveniet aliquam ipsum facilis reiciendis.
           Aspernatur, aliquid? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, neque facilis. Odio
@@ -83,13 +84,29 @@
         <h2>
           Referenciák
         </h2>
-        <div class="references__slider"></div>
-        <!-- Kártyás véleményezett képek
-        esetleg előtte utána képek -->
+        <div class="swiffy-slider slider-item-helper">
+          <ul class="slider-container">
+              <li><img src="./images/references/1 (1).webp" alt=""></li>
+              <li><img loading="lazy" src="./images/references/1 (2).webp" alt=""></li>
+              <li><img loading="lazy" src="./images/references/1 (3).webp" alt=""></li>
+              <li><img loading="lazy" src="./images/references/1 (4).webp" alt=""></li>
+          </ul>
+      
+          <button type="button" class="slider-nav"></button>
+          <button type="button" class="slider-nav slider-nav-next"></button>
+      
+          <div class="slider-indicators">
+              <button class="active"></button>
+              <button></button>
+              <button></button>
+          </div>
+      </div>
       </header>
     </section>
     <section id="faq">
-      <h2>Gyakran ismételt kérdések</h2>
+      <header>
+        <h2>Gyakran ismételt kérdések</h2>
+      </header>
       <dl>
         <dt>Lorem la di pus?</dt>
         <dd>
@@ -123,12 +140,6 @@
       </dl>
     </section>
     <section id="contact">
-
-      <header>
-        <h3>
-          Elérhetőség
-        </h3>
-      </header>
       <label for="phone-id">Telefon:</label>
       <a id="phone-id" href="callto:+3630999999999">+3630999999999</a>
       <label for="email-id">E-mail:</label>
@@ -142,6 +153,8 @@
   </main>
 
   <!-- your content here... -->
+  <script src="js/swiffy-slider.js"></script>
+  <script src="js/swiffy-slider-extensions.js"></script>
   <script src="js/scripts.js"></script>
 </body>
 
